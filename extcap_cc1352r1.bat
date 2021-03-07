@@ -1,0 +1,5 @@
+@echo off
+SET PY_INTERPRETER=""
+SET PY_APP=""
+
+%PY_INTERPRETER% %PY_APP% %*
