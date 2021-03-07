@@ -130,3 +130,6 @@ dmypy.json
 
 # User log files
 *.log
+
+# vscode ide
+.vscode/
