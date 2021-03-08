@@ -274,8 +274,8 @@ def extcap_capture(interface, fifo, serial_port, rf_channel):
                                 else:
                                     pcap_data = get_data_802_15_4(rxData.getData())
                                 fh.write(pcap_packet(pcap_data))
-                    except Exception as e:
-                        logger.error(e)
+                    except:
+                        logger.exception("Exception during capture")
                         sniffer.close()
                         sys.exit(ERROR_INTERFACE)
             else:

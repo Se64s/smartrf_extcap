@@ -75,7 +75,7 @@ logger.setLevel(logging.DEBUG)
 fileHandlerFormatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 fileHandler = logging.FileHandler(log_filename)
 fileHandler.setFormatter(fileHandlerFormatter)
-fileHandler.setLevel(logging.DEBUG)
+fileHandler.setLevel(logging.INFO)
 
 # Comment to disable file logging
 logger.addHandler(fileHandler)
@@ -283,7 +283,7 @@ class SmartRfDevice:
             dbgStr = 'RF DATA: timestamp %d, rssi %d, status %d, len %d, data ' % (rfData.getTimestamp(), rfData.getRssi(), rfData.getStatus(), len(rfData.getData()))
             for byte in rfData.getData():
                 dbgStr += 'x%02X ' % byte
-            logger.info(dbgStr)
+            logger.debug(dbgStr)
             return rfData
         return None
 
